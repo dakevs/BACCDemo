@@ -43,96 +43,14 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     @IBAction func tapRoute(sender: AnyObject) {
         
-        var sanFranPickup, sanFranDropoff, vallejo1, vallejo2, alameda1, alameda2, oakland1, oakland2, fairfield: MKPointAnnotation
-        var sanFranPickupLoc, sanFranDropoffLoc, vallejoLoc1, vallejoLoc2, alamedaLoc1, alamedaLoc2, oaklandLoc1, oaklandLoc2, fairfieldLoc, focusRoute: CLLocationCoordinate2D
-     
-        //For the demo, we will do a quick hack to draw the points to show the expected UX
-        //Eventually, these will be saved to Parse as their geolocation Objects
         
-        /*
-        Fairfield - Corner of Cadenasso Dr. and Magellan Rd. - 38.248371, -122.068798
-        Alameda - Near Encinal & Park Ave. - 37.761952, -122.243130
-        Alameda - Near Webster St. & Santa Clara Ave. - 37.773310, -122.276736
-        San Francisco - Dropoff Location - 37.788587, -122.394394
-        San Francisco - Pickup Location - 37.789986, -122.391808
-        Vallejo - Near Lemon St. - 38.092574, -122.235227
-        Vallejo - Near Vallejo Transit Center/Downton - 38.099198, -122.260491
-        Oakland - Claremont & College Ave. East of College, north of Claremont- 37.850371, -122.251496
-        Oakland - Park Blvd. & Hollywood Ave. Near TransBay bus stops between Trestle Glen & Hollywood. - 37.811435, -122.215483
-        */
-     
-        sanFranPickup = MKPointAnnotation()
-        sanFranPickupLoc = CLLocationCoordinate2DMake(37.761952, -122.243130)
-        sanFranPickup.coordinate = sanFranPickupLoc
-        sanFranPickup.title = "San Francisco Carpool"
-        sanFranPickup.subtitle = "Pickup location for Casual Carpoolers leaving San Francisco"
-        self.mapView.addAnnotation(sanFranPickup)
-        
-        sanFranDropoff = MKPointAnnotation()
-        sanFranDropoffLoc = CLLocationCoordinate2DMake(37.788587, -122.394394)
-        sanFranDropoff.coordinate = sanFranDropoffLoc
-        sanFranDropoff.title = "San Francisco Carpool Dropoff"
-        sanFranDropoff.subtitle = "Dropoff location for Casual Carpoolers arriving in San Francisco"
-        self.mapView.addAnnotation(sanFranDropoff)
-
-        vallejo1 = MKPointAnnotation()
-        vallejoLoc1 = CLLocationCoordinate2DMake(38.092574, -122.235227)
-        vallejo1.coordinate = vallejoLoc1
-        vallejo1.title = "Vallejo Casual Carpool"
-        vallejo1.subtitle = "Near Lemon St."
-        self.mapView.addAnnotation(vallejo1)
-        
-        
-        vallejo2 = MKPointAnnotation()
-        vallejoLoc2 = CLLocationCoordinate2DMake(38.099198, -122.260491)
-        vallejo2.coordinate = vallejoLoc2
-        vallejo2.title = "Vallejo Casual Carpool"
-        vallejo2.subtitle = "Near Downtown Vallejo & Transit Center"
-        self.mapView.addAnnotation(vallejo2)
-        
-        alameda1 = MKPointAnnotation()
-        alamedaLoc1 = CLLocationCoordinate2DMake(37.761952, -122.243130)
-        alameda1.coordinate = alamedaLoc1
-        alameda1.title = "Alameda Casual Carpool"
-        alameda1.subtitle = "Near Encinal & Park Ave."
-        self.mapView.addAnnotation(alameda1)
-        
-        alameda2 = MKPointAnnotation()
-        alamedaLoc2 = CLLocationCoordinate2DMake(37.773310, -122.276736)
-        alameda2.coordinate = alamedaLoc2
-        alameda2.title = "Alameda Casual Carpool"
-        alameda2.subtitle = "Near Webster St. & Santa Clara Ave."
-        self.mapView.addAnnotation(alameda2)
-        
-        oakland1 = MKPointAnnotation()
-        oaklandLoc1 = CLLocationCoordinate2DMake(37.850371, -122.251496)
-        oakland1.coordinate = oaklandLoc1
-        oakland1.title = "Oakland Casual Carpool"
-        oakland1.subtitle = "Claremont & College Ave. East of College, north of Claremont"
-        self.mapView.addAnnotation(oakland1)
-        
-        oakland2 = MKPointAnnotation()
-        oaklandLoc2 = CLLocationCoordinate2DMake(37.811435, -122.215483)
-        oakland2.coordinate = oaklandLoc2
-        oakland2.title = "Oakland Casual Carpool"
-        oakland2.subtitle = "Near Lemon St."
-        self.mapView.addAnnotation(oakland2)
-        
-        fairfield = MKPointAnnotation()
-        fairfieldLoc = CLLocationCoordinate2DMake(38.248371, -122.068798)
-        fairfield.coordinate = fairfieldLoc
-        fairfield.title = "Fairfield Casual Carpool"
-        fairfield.subtitle = "Near Lemon St."
-        self.mapView.addAnnotation(vallejo1)
-        
-        
+        var focusRoute: CLLocationCoordinate2D
         focusRoute = CLLocationCoordinate2DMake(37.910709, -122.215534)
         var span:MKCoordinateSpan = MKCoordinateSpanMake(1.1, 1.1)
         var region:MKCoordinateRegion  = MKCoordinateRegionMake(focusRoute, span)
         mapView.setRegion(region, animated:true)
         
-        
-        
+        //now draw the spots on the mapview using Parse object named "CarpoolSpots"
         
     }
     
