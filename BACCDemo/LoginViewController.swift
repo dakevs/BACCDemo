@@ -38,38 +38,36 @@ class LoginViewController: UIViewController {
     }
     //////////////
     
+    @IBAction func btnSignUp(sender: UIButton) {
+        
+    }
 
+   
+    
+    @IBAction func btnForgotPassword(sender: UIButton) {
+        
+        
+    }
+    
     @IBAction func btnLogin(sender: UIButton) {
         var errorMessage = "Please try again later"
-        
         if txtUsername.text == "" || txtPassword.text == "" {
-            
             displayAlert("Error in form", message: "Please enter a username and password")
-            
         } else {
             //since the user is seeing the login button, we will call the login function here
-            
-            PFUser.logInWithUsernameInBackground(txtUsername.text, password: txtPassword.text, block: { (user, error) -> Void in
-                
+            PFUser.logInWithUsernameInBackground(txtUsername.text,
+                password: txtPassword.text, block: { (user, error) -> Void in
+                    
                 self.activityIndicator.stopAnimating()
                 UIApplication.sharedApplication().endIgnoringInteractionEvents()
-                
-                if user != nil {
-                    
+                    if user != nil {
                     // Logged In!
-                    
                 } else {
-                    
                     if let errorString = error!.userInfo?["error"] as? String {
-                        
-                        errorMessage = errorString
-                        
+                            errorMessage = errorString
                     }
-                    
-                    self.displayAlert("Failed Login", message: errorMessage)
-                    
+                            self.displayAlert("Failed Login", message: errorMessage)
                 }
-                
             })
         }
         
