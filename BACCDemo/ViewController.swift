@@ -46,6 +46,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         var sanFranPickup, sanFranDropoff, vallejo1, vallejo2, alameda1, alameda2, oakland1, oakland2, fairfield: MKPointAnnotation
         var sanFranPickupLoc, sanFranDropoffLoc, vallejoLoc1, vallejoLoc2, alamedaLoc1, alamedaLoc2, oaklandLoc1, oaklandLoc2, fairfieldLoc, focusRoute: CLLocationCoordinate2D
      
+        //For the demo, we will do a quick hack to draw the points to show the expected UX
+        //Eventually, these will be saved to Parse as their geolocation Objects
         
         /*
         Fairfield - Corner of Cadenasso Dr. and Magellan Rd. - 38.248371, -122.068798
