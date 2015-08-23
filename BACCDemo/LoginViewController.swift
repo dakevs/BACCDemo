@@ -44,10 +44,10 @@ class LoginViewController: UIViewController {
 
    
     
-    @IBAction func btnForgotPassword(sender: UIButton) {
+   // @IBAction func btnForgotPassword(sender: UIButton) {
         
         
-    }
+    //}
     
     @IBAction func btnLogin(sender: UIButton) {
         var errorMessage = "Please try again later"
@@ -81,6 +81,15 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    override func viewDidAppear(animated: Bool) {
+        if PFUser.currentUser() != nil {
+            //that means a user is logged in, and then we perform the segue to the map view
+            self.performSegueWithIdentifier("gotoMap", sender: self)
+        
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="al0-Re-4Yw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--LoginViewController-->
@@ -16,16 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zn0-KD-Exi">
-                                <rect key="frame" x="14" y="212" width="293" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zn0-KD-Exi">
+                                <rect key="frame" x="14" y="199" width="293" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="iWw-4G-QyT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Use the form below to signup or log in" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozF-pI-Mi1">
-                                <rect key="frame" x="14" y="136" width="293" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the form below to signup or log in" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozF-pI-Mi1">
+                                <rect key="frame" x="14" y="124" width="293" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="u7a-5R-roL"/>
                                 </constraints>
@@ -33,8 +34,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtQ-tR-qS9">
-                                <rect key="frame" x="139" y="250" width="43" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtQ-tR-qS9">
+                                <rect key="frame" x="139" y="237" width="43" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="43" id="sTg-9A-Ghc"/>
                                 </constraints>
@@ -45,8 +46,8 @@
                                     <action selector="btnLogin:" destination="al0-Re-4Yw" eventType="touchUpInside" id="ubs-Il-AJ0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Not registered?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldE-kr-uEe">
-                                <rect key="frame" x="101" y="288" width="119" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not registered?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldE-kr-uEe">
+                                <rect key="frame" x="101" y="275" width="119" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="119" id="8Gr-yX-WVU"/>
                                 </constraints>
@@ -54,8 +55,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEm-ww-IFP">
-                                <rect key="frame" x="48" y="315" width="76" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEm-ww-IFP">
+                                <rect key="frame" x="48" y="302" width="76" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="w5Q-kp-iR8"/>
                                 </constraints>
@@ -66,16 +67,16 @@
                                     <action selector="btnSignUp:" destination="al0-Re-4Yw" eventType="touchUpInside" id="x5w-l7-qJ6"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name/Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cjt-zq-T7X">
-                                <rect key="frame" x="14" y="166" width="293" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name/Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cjt-zq-T7X">
+                                <rect key="frame" x="14" y="153" width="293" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="WwA-9O-dzE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oF6-xN-9GE">
-                                <rect key="frame" x="150" y="317" width="21" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oF6-xN-9GE">
+                                <rect key="frame" x="150" y="304" width="21" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="21" id="5hF-nh-u24"/>
                                 </constraints>
@@ -83,8 +84,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bf8-EB-rmo">
-                                <rect key="frame" x="207" y="316" width="31" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bf8-EB-rmo">
+                                <rect key="frame" x="207" y="303" width="31" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="31" id="nev-iL-Ase"/>
                                 </constraints>
@@ -92,11 +93,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="show" id="Sdq-fM-deA"/>
+                                    <segue destination="vXZ-lx-hvc" kind="show" identifier="gotoMap" id="Sdq-fM-deA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to B.A.C.C!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0X7-UI-I7c">
-                                <rect key="frame" x="48" y="87" width="224" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to B.A.C.C!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0X7-UI-I7c">
+                                <rect key="frame" x="48" y="87" width="224" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="224" id="2EN-lZ-jqo"/>
                                 </constraints>
@@ -109,9 +110,6 @@
                                 <state key="normal" title="Forgot Password?">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="btnForgotPassword:" destination="al0-Re-4Yw" eventType="touchUpInside" id="3hw-BJ-KmF"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -138,7 +136,6 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="btnForgotPassword" destination="yHX-9P-dhc" id="0x7-fn-uIE"/>
                         <outlet property="lblRegistered" destination="ldE-kr-uEe" id="vAv-we-V8g"/>
                         <outlet property="txtPassword" destination="zn0-KD-Exi" id="cCj-g7-wmT"/>
                         <outlet property="txtUsername" destination="cjt-zq-T7X" id="zig-eT-lpV"/>
@@ -160,10 +157,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LTV-uI-8bq">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LTV-uI-8bq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LTV-uI-8bq" secondAttribute="height" multiplier="375:623" id="ZGm-3v-1nM"/>
+                                </constraints>
                             </mapView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jOc-X8-8iS">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="jOc-X8-8iS">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="nZA-D6-z48"/>
@@ -197,6 +197,14 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LTV-uI-8bq" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="7HP-fH-Y9p"/>
+                            <constraint firstItem="LTV-uI-8bq" firstAttribute="leading" secondItem="jOc-X8-8iS" secondAttribute="leading" id="BRw-5e-PO8"/>
+                            <constraint firstItem="LTV-uI-8bq" firstAttribute="bottom" secondItem="jOc-X8-8iS" secondAttribute="top" id="ETT-nN-Zi4"/>
+                            <constraint firstAttribute="trailing" secondItem="LTV-uI-8bq" secondAttribute="trailing" id="FpH-se-V59"/>
+                            <constraint firstItem="LTV-uI-8bq" firstAttribute="trailing" secondItem="jOc-X8-8iS" secondAttribute="trailing" id="MaK-AL-atG"/>
+                            <constraint firstItem="LTV-uI-8bq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="h6u-vp-rht"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>

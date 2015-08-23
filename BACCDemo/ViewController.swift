@@ -15,6 +15,10 @@ import Parse
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
 
 {
+    var currentLoc: PFGeoPoint! = PFGeoPoint()
+    @IBOutlet var mapView: MKMapView!
+    var locationManager = CLLocationManager()
+
 
     @IBAction func tapReverse(sender: AnyObject) {
         let alert = UIAlertController(title: "Reverse Route", message: "This button will allow the users to easily \"reverse\" their route.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -51,13 +55,31 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         mapView.setRegion(region, animated:true)
         
         //now draw the spots on the mapview using Parse object named "CarpoolSpots"
+        var annotationQuery = PFQuery(className: "CarpoolSpots")
+        
+        currentLoc = PFGeoPoint(location: MapView.location)
+        
+        annotationQuery.findObjectsInBackgroundWithBlock {
+            (carpoolSpots, error) -> Void in
+            if error == nil {
+                // The find succeeded.
+                println("Successful query for annotations")
+                let myCarpoolSpots = carpoolSpots as! [PFObject]
+                
+                for carpoolSpots in myCarpoolSpots {
+                    let point = post["Location"] as PFGeoPoint
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = CLLocationCoordinate2DMake(point.latitude, point.longitude)
+                    self.mapView.addAnnotation(annotation)
+                }
+            } else {
+                // Log details of the failure
+                println("Error: \(error)")
+            }
+        }
         
     }
     
-    @IBOutlet var mapView: MKMapView!
-    
-
-    var locationManager = CLLocationManager()
     
     
     override func viewDidLoad() {
@@ -70,16 +92,20 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         var span:MKCoordinateSpan = MKCoordinateSpanMake(0.05, 0.05)
         var region:MKCoordinateRegion  = MKCoordinateRegionMake(work, span)
         mapView.setRegion(region, animated:true)
+    
         
+        /*
+        
+        PARSE TEST
         let testObject = PFObject(className: "TestObject")
         testObject["foo"] = "bar"
         testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             println("Object has been saved.")
-        }
-        
-        
-        
+        */
+
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
