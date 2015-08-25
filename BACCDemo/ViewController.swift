@@ -57,21 +57,25 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         //now draw the spots on the mapview using Parse object named "CarpoolSpots"
         var annotationQuery = PFQuery(className: "CarpoolSpots")
         
-        currentLoc = PFGeoPoint(location: MapView.location)
+      //  currentLoc = PFGeoPoint(location: mapView.location)
         
         annotationQuery.findObjectsInBackgroundWithBlock {
             (carpoolSpots, error) -> Void in
             if error == nil {
                 // The find succeeded.
                 println("Successful query for annotations")
+         
+                
                 let myCarpoolSpots = carpoolSpots as! [PFObject]
                 
-                for carpoolSpots in myCarpoolSpots {
-                    let point = post["Location"] as PFGeoPoint
+                for carpoolSpot in myCarpoolSpots {
+                    let point = carpoolSpot["spotLocation"] as! PFGeoPoint
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = CLLocationCoordinate2DMake(point.latitude, point.longitude)
                     self.mapView.addAnnotation(annotation)
                 }
+                
+
             } else {
                 // Log details of the failure
                 println("Error: \(error)")
@@ -84,7 +88,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // When we first load the map view, we will check to see if the user is already logged in
+        //TODO: When we first load the map view, we will check to see if the user is already logged in
         
     
 
