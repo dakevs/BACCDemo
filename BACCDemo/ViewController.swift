@@ -63,8 +63,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             (carpoolSpots, error) -> Void in
             if error == nil {
                 // The find succeeded.
-                println("Successful query for annotations")
+                //println("Successful query for annotations")
          
+                
                 
                 let myCarpoolSpots = carpoolSpots as! [PFObject]
                 

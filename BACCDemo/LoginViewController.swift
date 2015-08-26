@@ -11,69 +11,22 @@ import Parse
 
 class LoginViewController: UIViewController {
     
-    var signupActive = false //aka "login mode
-    
-    
+
     @IBOutlet var txtUsername: UITextField!
     
     @IBOutlet var txtPassword: UITextField!
     
-    @IBOutlet var lblRegistered: UILabel!
+    @IBOutlet var txtConfirmPassword: UITextField!
     
     
-    /////////
-    
-    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-    
-    func displayAlert(title: String, message: String) {
-        
-        var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction((UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+    @IBAction func switchAction(value: Bool) {
+        if value{
+            txtConfirmPassword.hidden = false
+        }else{
+            txtConfirmPassword.hidden = true
             
-            self.dismissViewControllerAnimated(true, completion: nil)
-            
-        })))
-        
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
-    //////////////
-    
-    @IBAction func btnSignUp(sender: UIButton) {
-        
-    }
-
-   
-    
-   // @IBAction func btnForgotPassword(sender: UIButton) {
-        
-        
-    //}
-    
-    @IBAction func btnLogin(sender: UIButton) {
-        var errorMessage = "Please try again later"
-        if txtUsername.text == "" || txtPassword.text == "" {
-            displayAlert("Error in form", message: "Please enter a username and password")
-        } else {
-            //since the user is seeing the login button, we will call the login function here
-            PFUser.logInWithUsernameInBackground(txtUsername.text,
-                password: txtPassword.text, block: { (user, error) -> Void in
-                    
-                self.activityIndicator.stopAnimating()
-                UIApplication.sharedApplication().endIgnoringInteractionEvents()
-                    if user != nil {
-                    // Logged In!
-                } else {
-                    if let errorString = error!.userInfo?["error"] as? String {
-                            errorMessage = errorString
-                    }
-                            self.displayAlert("Failed Login", message: errorMessage)
-                }
-            })
         }
-        
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,13 +36,14 @@ class LoginViewController: UIViewController {
     
     
     override func viewDidAppear(animated: Bool) {
-        if PFUser.currentUser() != nil {
+//        if PFUser.currentUser() != nil {
             //that means a user is logged in, and then we perform the segue to the map view
-            self.performSegueWithIdentifier("gotoMap", sender: self)
+  //          self.performSegueWithIdentifier("gotoMap", sender: self)
         
-        }
+        //}
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
