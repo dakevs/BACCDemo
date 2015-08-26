@@ -40,8 +40,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xoL-ca-tJd">
                                 <rect key="frame" x="136" y="237" width="51" height="31"/>
+                                <accessibility key="accessibilityConfiguration" label=""/>
                                 <connections>
-                                    <action selector="switchAction:" destination="al0-Re-4Yw" eventType="valueChanged" id="c2q-YE-g4Y"/>
+                                    <action selector="switchAction:" destination="al0-Re-4Yw" eventType="valueChanged" id="0rS-HZ-LO1"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcf-59-QBX">
@@ -55,6 +56,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnSubmit:" destination="al0-Re-4Yw" eventType="touchUpInside" id="yV9-wK-7Ht"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bf8-EB-rmo">
                                 <rect key="frame" x="224" y="357" width="31" height="30"/>
@@ -76,6 +80,9 @@
                                 <state key="normal" title="Forgot Password?">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnForgotPassword:" destination="al0-Re-4Yw" eventType="touchUpInside" id="Bqe-W2-ngA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ooq-9a-hRN">
                                 <rect key="frame" x="48" y="242" width="43" height="21"/>
@@ -88,6 +95,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="Switch" destination="xoL-ca-tJd" id="UFR-FR-dJl"/>
                         <outlet property="txtConfirmPassword" destination="vcr-Nv-j0o" id="5c6-vu-WR6"/>
                         <outlet property="txtPassword" destination="zn0-KD-Exi" id="8p7-Se-yzp"/>
                         <outlet property="txtUsername" destination="cjt-zq-T7X" id="xgR-1r-Z2X"/>
