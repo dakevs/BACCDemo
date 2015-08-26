@@ -48,23 +48,26 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func btnSubmit(sender: UIButton) {
-        
-        if Switch.on {
-            //user is in signup mode
-            if txtPassword.text != txtConfirmPassword.text {
-                //the password fields do not match
-                displayAlert("Mismatched Passwords", message:"Please enter matching passwords")
-           
-            } else {
-            //the password fields do match, and the user can register with this username/email and password
-            
-            }
-            
+        if txtUsername.text == "" || txtPassword.text == "" {
+            //they're missing a username or password
+            displayAlert("Missing Field(s)", message: "Please enter both a username and password")
         } else {
-            //user is in login mode and we can submit credentials
+            //we check if they're in signup/login mode
+            if Switch.on {
+                //user is in signup mode
+                if txtPassword.text != txtConfirmPassword.text {
+                    //the password fields do not match
+                    displayAlert("Mismatched Passwords", message: "Please enter matching passwords")
+                } else {
+                    //the password fields do match, and the user can register with this username/email and password
+                }
+            } else {
+                //user is in login mode and we can submit credentials
+                }
         }
     }
-    
+
+
     @IBAction func btnForgotPassword(sender: UIButton) {
         //after use taps this button the forgot password flow is begun
     }
