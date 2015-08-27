@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
 
     var registerUser = false
@@ -28,10 +28,13 @@ class LoginViewController: UIViewController {
     @IBAction func switchAction(sender: UISwitch) {
         if Switch.on {
             //user is in signup mode
-            txtConfirmPassword.hidden = false
+            txtConfirmPassword.enabled = true
+            txtConfirmPassword.text == "";
+            
         } else {
             //user is in login mode
-            txtConfirmPassword.hidden = true
+            txtConfirmPassword.enabled = false
+            txtConfirmPassword.text == "";
         }
     }
     
@@ -74,11 +77,20 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)        // Do any additional setup after loading the view.
         
-        // Do any additional setup after loading the view.
+        self.txtConfirmPassword.delegate = self;
+        self.txtUsername.delegate = self;
+        self.txtPassword.delegate = self;
+        
     }
     
-    
+    func DismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     override func viewDidAppear(animated: Bool) {
 
         //if PFUser.currentUser() != nil {
@@ -92,8 +104,13 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        txtPassword.resignFirstResponder()
+        txtConfirmPassword.resignFirstResponder()
+        txtUsername.resignFirstResponder()
+        return true
+    }
+}
     /*
     // MARK: - Navigation
     
@@ -103,7 +120,7 @@ class LoginViewController: UIViewController {
     // Pass the selected object to the new view controller.
     }
     */
-}
+
 
 
 
