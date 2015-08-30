@@ -29,12 +29,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if Switch.on {
             //user is in signup mode
             txtConfirmPassword.enabled = true
-            txtConfirmPassword.text == "";
             
         } else {
             //user is in login mode
             txtConfirmPassword.enabled = false
-            txtConfirmPassword.text == "";
         }
     }
     
@@ -63,10 +61,38 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     displayAlert("Mismatched Passwords", message: "Please enter matching passwords")
                 } else {
                     //the password fields do match, and the user can register with this username/email and password
-                }
+                    var user = PFUser()
+                    user.username = txtUsername.text
+                    user.password = txtPassword.text
+                    // other fields can be set just like with PFObject
+                    
+                    user.signUpInBackgroundWithBlock {
+                        (succeeded: Bool, error: NSError?) -> Void in
+                        if let error = error {
+                            let errorString = error.userInfo?["error"] as! String
+                            // Show the errorString somewhere and let the user try again.
+                            self.displayAlert("Signup Error", message: errorString)
+                        } else {
+                            // Hooray! Let them use the app now.
+                            self.performSegueWithIdentifier("gotoMap", sender: self)
+                        }
+                    }                }
             } else {
                 //user is in login mode and we can submit credentials
+                PFUser.logInWithUsernameInBackground(txtUsername.text, password:txtPassword.text) {
+                    (user: PFUser?, error: NSError?) -> Void in
+                        if user != nil {
+                            // Do stuff after successful login.
+                            self.performSegueWithIdentifier("gotoMap", sender: self)
+                        } else {
+
+                            // The login failed. Check error to see why.
+  
+                    }
+
                 }
+            }
+        
         }
     }
 
@@ -93,10 +119,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewDidAppear(animated: Bool) {
 
-        //if PFUser.currentUser() != nil {
-        //that means a user is logged in, and then we perform the segue to the map view
-        //self.performSegueWithIdentifier("gotoMap", sender: self)
-        //}
+        if PFUser.currentUser() != nil {
+
+            //that means a user is logged in, and then we perform the segue to the map view
+            //dont forget to check for temp users as well**** TO DO ****
+            self.performSegueWithIdentifier("gotoMap", sender: self)
+          
+        } else {
+            //there is no user logged in, OR there is no temporary user, and we then display the login screen.
+        }
     }
 
     

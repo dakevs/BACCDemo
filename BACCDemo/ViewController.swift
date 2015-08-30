@@ -17,6 +17,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 {
     var currentLoc: PFGeoPoint! = PFGeoPoint()
     @IBOutlet var mapView: MKMapView!
+    
     var locationManager = CLLocationManager()
 
 
@@ -89,28 +90,26 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO: When we first load the map view, we will check to see if the user is already logged in
-        
     
-
+        //locationManager variable declared at top of class
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        /*
         var work = CLLocationCoordinate2DMake(37.790533, -122.404622)
         var span:MKCoordinateSpan = MKCoordinateSpanMake(0.05, 0.05)
         var region:MKCoordinateRegion  = MKCoordinateRegionMake(work, span)
         mapView.setRegion(region, animated:true)
-    
-        
-        /*
-        
-        PARSE TEST
-        let testObject = PFObject(className: "TestObject")
-        testObject["foo"] = "bar"
-        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            println("Object has been saved.")
+        DEMO DATA
         */
-
     }
     
-    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
