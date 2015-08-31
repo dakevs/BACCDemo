@@ -119,7 +119,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewDidAppear(animated: Bool) {
 
-        if PFUser.currentUser() != nil {
+        if PFUser.currentUser()?.username != nil {
 
             //that means a user is logged in, and then we perform the segue to the map view
             //dont forget to check for temp users as well**** TO DO ****

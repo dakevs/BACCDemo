@@ -151,7 +151,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="dq6-zb-E6y"/>
-                                    <barButtonItem title="More" id="FkD-ki-7td"/>
+                                    <barButtonItem title="Logout" id="FkD-ki-7td"/>
                                     <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="JH3-Mm-vGJ"/>
                                 </items>
                             </toolbar>
