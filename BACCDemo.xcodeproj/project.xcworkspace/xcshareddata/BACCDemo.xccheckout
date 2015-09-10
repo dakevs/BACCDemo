@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>50EB4C36-B18D-46D8-8BB1-C022B1E91BCC</string>
 	<key>IDESourceControlProjectName</key>
-	<string>BACCDemo</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0BB632888F91472214CFADA0ABCD57F29038DA99</key>
 		<string>https://github.com/dakevs/BACCDemo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BACCDemo.xcodeproj</string>
+	<string>BACCDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0BB632888F91472214CFADA0ABCD57F29038DA99</key>

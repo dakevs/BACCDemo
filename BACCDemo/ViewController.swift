@@ -20,6 +20,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     var locationManager = CLLocationManager()
 
+    @IBAction func btnLogout(sender: UIBarButtonItem) {
+    }
 
     @IBAction func tapReverse(sender: AnyObject) {
         let alert = UIAlertController(title: "Reverse Route", message: "This button will allow the users to easily \"reverse\" their route.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -49,54 +51,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBAction func tapRoute(sender: AnyObject) {
         
         
-        //stop Location Manager updating the location
-        locationManager.stopUpdatingLocation()
-        //set the region an
-        
-        /*
-        var location:CLLocationCoordinate2D = locationManager.location!.coordinate
-        
-        let center = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        
-        self.mapView.setRegion(region, animated: true)
-        */
-        // OLD STUFF FOR DEMO
-        var focusRoute: CLLocationCoordinate2D
-        focusRoute = CLLocationCoordinate2DMake(37.910709, -122.215534)
-        var span:MKCoordinateSpan = MKCoordinateSpanMake(1.1, 1.1)
-        var region:MKCoordinateRegion  = MKCoordinateRegionMake(focusRoute, span)
-        mapView.setRegion(region, animated:true)
-    
-        
-        //now draw the spots on the mapview using Parse object named "CarpoolSpots"
-        var annotationQuery = PFQuery(className: "CarpoolSpots")
-        
-      //  currentLoc = PFGeoPoint(location: mapView.location)
-        
-        annotationQuery.findObjectsInBackgroundWithBlock {
-            (carpoolSpots, error) -> Void in
-            if error == nil {
-                // The find succeeded.
-                //println("Successful query for annotations")
-         
-                
-                
-                let myCarpoolSpots = carpoolSpots as! [PFObject]
-                
-                for carpoolSpot in myCarpoolSpots {
-                    let point = carpoolSpot["spotLocation"] as! PFGeoPoint
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = CLLocationCoordinate2DMake(point.latitude, point.longitude)
-                    self.mapView.addAnnotation(annotation)
-                }
-                
-
-            } else {
-                // Log details of the failure
-                println("Error: \(error)")
-            }
-        }
         
     }
     
@@ -110,6 +64,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
+        println(PFUser.currentUser()?.username)
         
         /*
         var work = CLLocationCoordinate2DMake(37.790533, -122.404622)
@@ -148,6 +103,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "logout" {
+            PFUser.logOut()
+            var currentUser = PFUser.currentUser()
+            
+            println(PFUser.currentUser()?.username)
+            
+        }
     }
 
 
