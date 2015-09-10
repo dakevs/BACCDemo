@@ -10,6 +10,11 @@ import UIKit
 
 class RouteViewController: UIViewController {
 
+    @IBAction func btnReverse(sender: AnyObject) {
+        
+        //a pop up dialog will show, then if user hits yes,  we reverse starting and destination cities
+        
+    }
     @IBAction func btnSave(sender: AnyObject) {
         
         //perform data validation here so we don't have to do any fancy stuff with the picker wheel data sources.
