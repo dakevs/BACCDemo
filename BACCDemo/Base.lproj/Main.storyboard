@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8lP-Gg-9H9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8lP-Gg-9H9">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -166,6 +167,42 @@
             </objects>
             <point key="canvasLocation" x="180.5" y="353.5"/>
         </scene>
+        <!--Route View Controller-->
+        <scene sceneID="SGb-Y6-wYQ">
+            <objects>
+                <viewController id="3kh-4U-z6r" customClass="RouteViewController" customModule="BACCDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k3a-5X-Jad"/>
+                        <viewControllerLayoutGuide type="bottom" id="0nW-3Y-1d1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="axL-ei-Wln">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l8Y-fl-CEH">
+                                <rect key="frame" x="5" y="-8" width="600" height="600"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gZS-a7-52x">
+                                        <rect key="frame" x="0.0" y="78" width="600" height="162"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="3kh-4U-z6r" id="3PP-ke-8gJ"/>
+                                            <outlet property="delegate" destination="3kh-4U-z6r" id="qI3-uM-wbq"/>
+                                        </connections>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="pickerCity" destination="gZS-a7-52x" id="w3T-ob-XiE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JmB-Ed-de1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="689" y="-327"/>
+        </scene>
         <!--RouteViewController-->
         <scene sceneID="tdf-Lz-xG5">
             <objects>
@@ -188,7 +225,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zzk-wE-gV0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Destination City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zzk-wE-gV0">
                                 <rect key="frame" x="126" y="278" width="122" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="BBw-dg-MyF"/>
@@ -198,16 +235,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEs-sE-hXR">
-                                <rect key="frame" x="0.0" y="108" width="375" height="162"/>
-                            </pickerView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stA-se-yof">
-                                <rect key="frame" x="0.0" y="307" width="375" height="162"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="alK-2p-OFt"/>
-                                    <constraint firstAttribute="width" constant="375" id="wa9-Yf-Mse"/>
-                                </constraints>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2O-kx-fg8">
                                 <rect key="frame" x="325" y="28" width="34" height="30"/>
                                 <constraints>
@@ -237,25 +264,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="stA-se-yof" firstAttribute="top" secondItem="Zzk-wE-gV0" secondAttribute="bottom" constant="8" id="6qn-cC-gsr"/>
                             <constraint firstItem="76u-dt-YPS" firstAttribute="leading" secondItem="xNl-sE-5gy" secondAttribute="leadingMargin" id="9MX-ia-7Dw"/>
                             <constraint firstAttribute="centerX" secondItem="h5p-ev-DTO" secondAttribute="centerX" id="9iE-Ws-GLy"/>
                             <constraint firstItem="K2O-kx-fg8" firstAttribute="top" secondItem="Eh8-wn-IUf" secondAttribute="bottom" constant="8" id="BKR-Ho-58b"/>
                             <constraint firstAttribute="centerX" secondItem="Zzk-wE-gV0" secondAttribute="centerX" id="TR2-m0-3bt"/>
                             <constraint firstItem="h5p-ev-DTO" firstAttribute="top" secondItem="Eh8-wn-IUf" secondAttribute="bottom" constant="59" id="U2f-SM-Y2S"/>
                             <constraint firstItem="K2O-kx-fg8" firstAttribute="trailing" secondItem="xNl-sE-5gy" secondAttribute="trailingMargin" id="XzO-1j-uKr"/>
-                            <constraint firstItem="Zzk-wE-gV0" firstAttribute="top" secondItem="yEs-sE-hXR" secondAttribute="bottom" constant="8" id="bP3-9z-Amv"/>
                             <constraint firstItem="76u-dt-YPS" firstAttribute="top" secondItem="Eh8-wn-IUf" secondAttribute="bottom" constant="8" id="dyn-aR-vGt"/>
-                            <constraint firstAttribute="centerX" secondItem="yEs-sE-hXR" secondAttribute="centerX" id="jsl-rM-O2Y"/>
-                            <constraint firstItem="yEs-sE-hXR" firstAttribute="top" secondItem="h5p-ev-DTO" secondAttribute="bottom" constant="8" id="oVb-Rr-Umw"/>
-                            <constraint firstAttribute="centerX" secondItem="stA-se-yof" secondAttribute="centerX" id="uhX-TK-DCa"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="destinationCity" destination="stA-se-yof" id="u9C-QM-c4j"/>
-                        <outlet property="startingCity" destination="yEs-sE-hXR" id="LMe-Wf-Cw4"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJd-pO-KDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

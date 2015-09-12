@@ -7,27 +7,51 @@
 //
 
 import UIKit
+import Parse
 
 class RouteViewController: UIViewController {
-
-    @IBAction func btnReverse(sender: AnyObject) {
+    
+    @IBOutlet var pickerCity: UIPickerView!
+    
+        @IBAction func btnReverse(sender: AnyObject) {
         
         //a pop up dialog will show, then if user hits yes,  we reverse starting and destination cities
         
     }
+    
     @IBAction func btnSave(sender: AnyObject) {
         
-        //perform data validation here so we don't have to do any fancy stuff with the picker wheel data sources.
+        /*perform data validation here so we don't have to do any fancy stuff with the picker wheel data sources.
 
-        //if starting city == destination city, pop an error.
+        
+       // if pickerStartingCity.isEqual(pickerDestinationCity){
+        
+            //if starting city == destination city, pop an error.
+         //   displayAlert("Missing Field(s)", message: "Please enter both a username and password")
+
+        //} else {
+        
+            println("They're different")
+        
+        }*/
+        
     }
     
-    @IBOutlet var startingCity: UIPickerView!
     
-    @IBOutlet var destinationCity: UIPickerView!
-    
+    func displayAlert(title: String, message: String) {
+        
+        var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction((UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+            
+            })))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         // Do any additional setup after loading the view.
     }

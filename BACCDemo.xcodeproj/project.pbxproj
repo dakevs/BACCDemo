@@ -30,6 +30,7 @@
 		10F772481B7378EF00D7184F /* rider.png in Resources */ = {isa = PBXBuildFile; fileRef = 10F772461B7378EF00D7184F /* rider.png */; };
 		10F772491B7378EF00D7184F /* steering wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 10F772471B7378EF00D7184F /* steering wheel.png */; };
 		10F9A1E21BA11F8F00D9FF4B /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F9A1E11BA11F8F00D9FF4B /* RouteViewController.swift */; };
+		10F9A1E41BA3414300D9FF4B /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F9A1E31BA3414200D9FF4B /* PickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		10F772461B7378EF00D7184F /* rider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rider.png; path = ../rider.png; sourceTree = "<group>"; };
 		10F772471B7378EF00D7184F /* steering wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "steering wheel.png"; path = "../steering wheel.png"; sourceTree = "<group>"; };
 		10F9A1E11BA11F8F00D9FF4B /* RouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
+		10F9A1E31BA3414200D9FF4B /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				105E18F71B6A27BF00A4255A /* AppDelegate.swift */,
 				105E18FC1B6A27BF00A4255A /* ViewController.swift */,
 				105E18FE1B6A27BF00A4255A /* Main.storyboard */,
+				10F9A1E31BA3414200D9FF4B /* PickerViewController.swift */,
 				10F9A1E11BA11F8F00D9FF4B /* RouteViewController.swift */,
 				10F287091B7B55F700C439CF /* LoginViewController.swift */,
 				105E19011B6A27BF00A4255A /* Images.xcassets */,
@@ -245,6 +248,7 @@
 		105E18EA1B6A27BF00A4255A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = ShepherdsSoftware;
 				TargetAttributes = {
@@ -303,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F9A1E41BA3414300D9FF4B /* PickerViewController.swift in Sources */,
 				10F2870A1B7B55F700C439CF /* LoginViewController.swift in Sources */,
 				105E18FD1B6A27BF00A4255A /* ViewController.swift in Sources */,
 				105E18F81B6A27BF00A4255A /* AppDelegate.swift in Sources */,
