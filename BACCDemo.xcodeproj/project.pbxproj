@@ -14,8 +14,8 @@
 		105E19021B6A27BF00A4255A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105E19011B6A27BF00A4255A /* Images.xcassets */; };
 		105E19051B6A27BF00A4255A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 105E19031B6A27BF00A4255A /* LaunchScreen.xib */; };
 		105E19111B6A27C000A4255A /* BACCDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E19101B6A27C000A4255A /* BACCDemoTests.swift */; };
-		10F286E21B7AAE6500C439CF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F286E01B7AAE6500C439CF /* Bolts.framework */; };
-		10F286E31B7AAE6500C439CF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F286E11B7AAE6500C439CF /* Parse.framework */; };
+		1066C3771BA6EE6900FEE98E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1066C3761BA6EE6900FEE98E /* Bolts.framework */; };
+		1066C3791BA6EE8000FEE98E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1066C3781BA6EE8000FEE98E /* Parse.framework */; };
 		10F286E51B7AB1C500C439CF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F286E41B7AB1C500C439CF /* AudioToolbox.framework */; };
 		10F286E71B7AB1D200C439CF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F286E61B7AB1D200C439CF /* CFNetwork.framework */; };
 		10F286F31B7AB24500C439CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F286F21B7AB24500C439CF /* CoreGraphics.framework */; };
@@ -55,8 +55,8 @@
 		105E190A1B6A27C000A4255A /* BACCDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BACCDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		105E190F1B6A27C000A4255A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		105E19101B6A27C000A4255A /* BACCDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BACCDemoTests.swift; sourceTree = "<group>"; };
-		10F286E01B7AAE6500C439CF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		10F286E11B7AAE6500C439CF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		1066C3761BA6EE6900FEE98E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		1066C3781BA6EE8000FEE98E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		10F286E41B7AB1C500C439CF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		10F286E61B7AB1D200C439CF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		10F286E81B7AB21800C439CF /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
@@ -92,10 +92,10 @@
 				10F286F51B7AB25400C439CF /* QuartzCore.framework in Frameworks */,
 				10F286F31B7AB24500C439CF /* CoreGraphics.framework in Frameworks */,
 				10F286E51B7AB1C500C439CF /* AudioToolbox.framework in Frameworks */,
+				1066C3771BA6EE6900FEE98E /* Bolts.framework in Frameworks */,
 				10F286E71B7AB1D200C439CF /* CFNetwork.framework in Frameworks */,
+				1066C3791BA6EE8000FEE98E /* Parse.framework in Frameworks */,
 				10F772451B72222700D7184F /* CoreLocation.framework in Frameworks */,
-				10F286E31B7AAE6500C439CF /* Parse.framework in Frameworks */,
-				10F286E21B7AAE6500C439CF /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +177,8 @@
 		10F287011B7AB56300C439CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				10F286E01B7AAE6500C439CF /* Bolts.framework */,
-				10F286E11B7AAE6500C439CF /* Parse.framework */,
+				1066C3781BA6EE8000FEE98E /* Parse.framework */,
+				1066C3761BA6EE6900FEE98E /* Bolts.framework */,
 				10F286E61B7AB1D200C439CF /* CFNetwork.framework */,
 				10F286E41B7AB1C500C439CF /* AudioToolbox.framework */,
 				10F772441B72222700D7184F /* CoreLocation.framework */,
@@ -248,12 +248,14 @@
 		105E18EA1B6A27BF00A4255A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0710;
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = ShepherdsSoftware;
 				TargetAttributes = {
 					105E18F11B6A27BF00A4255A = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 8UE8DX57UU;
 					};
 					105E19091B6A27C000A4255A = {
 						CreatedOnToolsVersion = 6.4;
@@ -375,6 +377,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -439,13 +442,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BACCDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ShepherdsSoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -453,13 +461,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BACCDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ShepherdsSoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -477,6 +490,7 @@
 				);
 				INFOPLIST_FILE = BACCDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ShepherdsSoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BACCDemo.app/BACCDemo";
 			};
@@ -492,6 +506,7 @@
 				);
 				INFOPLIST_FILE = BACCDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ShepherdsSoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BACCDemo.app/BACCDemo";
 			};

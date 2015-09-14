@@ -38,7 +38,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func displayAlert(title: String, message: String) {
         
-        var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction((UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             
             self.dismissViewControllerAnimated(true, completion: nil)
@@ -69,12 +69,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     user.signUpInBackgroundWithBlock {
                         (succeeded: Bool, error: NSError?) -> Void in
                         if let error = error {
-                            let errorString = error.userInfo?["error"] as! String
+                            let errorString = error.userInfo["error"] as! String
                             // Show the errorString somewhere and let the user try again.
                             self.displayAlert("Signup Error", message: errorString)
                         } else {
                             // Hooray! Let them use the app now.
-                            println(PFUser.currentUser()?.username)
+                            print(PFUser.currentUser()?.username)
                             self.performSegueWithIdentifier("showMap", sender: self)
                         }
                     }                }
@@ -82,18 +82,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 //user is in login mode and we can submit credentials
                 
 
-                PFUser.logInWithUsernameInBackground(txtUsername.text, password:txtPassword.text) {
+                PFUser.logInWithUsernameInBackground(txtUsername.text!, password:txtPassword.text!) {
                     (user: PFUser?, error: NSError?) -> Void in
                     if PFUser.currentUser()!.username != nil {
                         //Do stuff
-                        println(PFUser.currentUser()?.username)
-                        println("calling login segue")
+                        print(PFUser.currentUser()?.username)
+                        print("calling login segue")
                         
                         self.performSegueWithIdentifier("showMap", sender: self)
                         
                     } else {
                         if let error = error {
-                            let errorString = error.userInfo?["error"] as! String
+                            let errorString = error.userInfo["error"] as! String
                             // Show the errorString somewhere and let the user try again.
                             self.displayAlert("Login Error", message: errorString)
                         }
