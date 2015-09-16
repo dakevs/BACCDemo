@@ -84,7 +84,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
                 PFUser.logInWithUsernameInBackground(txtUsername.text!, password:txtPassword.text!) {
                     (user: PFUser?, error: NSError?) -> Void in
-                    if PFUser.currentUser()!.username != nil {
+                    if PFUser.currentUser()!.username != nil && error == nil {
                         //Do stuff
                         print(PFUser.currentUser()?.username)
                         print("calling login segue")
