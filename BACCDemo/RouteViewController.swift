@@ -11,29 +11,41 @@ import Parse
 
 class RouteViewController: UIViewController {
     
+    
+        let carpoolCities = ["Alameda", "Albany", "Berkeley", "El Cerrito", "Emeryville", "Fairfield", "Hercules", "Lafayette", "Moraga", "Oakland", "Orinda", "Piedmont", "Richmond", "Vallejo", "San Francisco"]
+
+    
     @IBOutlet var pickerCity: UIPickerView!
     
-        @IBAction func btnReverse(sender: AnyObject) {
+    
+    @IBOutlet weak var txtStartingCity: IQDropDownTextField!
+    
+    
+    @IBOutlet weak var txtEndingCity: IQDropDownTextField!
+   
+    @IBAction func btnReverse(sender: AnyObject) {
         
         //a pop up dialog will show, then if user hits yes,  we reverse starting and destination cities
+        let currentStartCity = txtStartingCity.text
+        let currentEndCity = txtEndingCity.text
         
+        txtStartingCity.text = currentEndCity
+        
+        txtEndingCity.text = currentStartCity
     }
     
     @IBAction func btnSave(sender: AnyObject) {
         
-        /*perform data validation here so we don't have to do any fancy stuff with the picker wheel data sources.
+        
+        if txtEndingCity.text == txtStartingCity.text {
+            
+            displayAlert("Invalid Data", message: "Start and End city can not be the same.")
 
+        } else {
         
-       // if pickerStartingCity.isEqual(pickerDestinationCity){
+            //save to the user object
+        }
         
-            //if starting city == destination city, pop an error.
-         //   displayAlert("Missing Field(s)", message: "Please enter both a username and password")
-
-        //} else {
-        
-            println("They're different")
-        
-        }*/
         
     }
     
@@ -52,6 +64,15 @@ class RouteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        txtStartingCity.isOptionalDropDown = false
+        txtStartingCity.itemList = carpoolCities
+        txtEndingCity.isOptionalDropDown = false
+        txtEndingCity.itemList = carpoolCities
+        
+        
+
+        //make sure the picker wheel isn't showing
+        
 
         // Do any additional setup after loading the view.
     }

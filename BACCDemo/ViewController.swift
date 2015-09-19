@@ -23,12 +23,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBAction func btnLogout(sender: UIBarButtonItem) {
     }
 
-    @IBAction func tapReverse(sender: AnyObject) {
-        let alert = UIAlertController(title: "Reverse Route", message: "This button will allow the users to easily \"reverse\" their route.", preferredStyle: UIAlertControllerStyle.Alert)
-        let alertAction = UIAlertAction(title: "OK!", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
-        alert.addAction(alertAction)
-        presentViewController(alert, animated: true) { () -> Void in }
-    }
     
     @IBAction func tapDrivers(sender: AnyObject) {
     
